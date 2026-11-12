@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round Robin Land | Media Pembelajaran Sistem Operasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/gantt.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="roda" aria-hidden="true">🎡</div>
+      <h1>Round Robin Land</h1>
+      <p>Belajar penjadwalan CPU sambil bermain · Sistem Operasi</p>
+      <nav class="tabs" role="tablist" aria-label="Menu utama">
+        <button class="tab aktif" role="tab" aria-selected="true" data-target="teori">📖 Teori</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="simulasi">🎮 Simulasi</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="kuis">🧩 Kuis</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="teori" class="panel aktif"></section>
+    <section id="simulasi" class="panel"></section>
+    <section id="kuis" class="panel"></section>
+  </main>
+
+  <footer>Dibuat oleh Kelompok ... · Mata kuliah Sistem Operasi</footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* Semua warna, font, dan ukuran ada di sini.
+   Ganti nilai di sini untuk mengubah tema seluruh web. */
+:root {
+  --bg: #fdf9f3;
+  --surface: #ffffff;
+  --ink: #3b3a56;
+  --muted: #77759a;
+  --garis: #efe9f7;
+
+  --purple: #a899e6;
+  --purple-dark: #7c6bd0;
+  --purple-soft: #ece8fb;
+  --mint: #9fdcc6;
+  --mint-soft: #e3f6ef;
+  --peach: #f8c4a0;
+  --peach-soft: #fdeee2;
+  --sky: #9ccaf0;
+  --sky-soft: #e4f1fb;
+  --pink: #f4b2c8;
+  --pink-soft: #fce8ef;
+  --yellow: #f3dc8f;
+  --yellow-soft: #fbf3d6;
+
+  --benar: #d6f3e4;
+  --benar-garis: #5fbf93;
+  --salah: #fbdcdc;
+  --salah-garis: #e08585;
+
+  --font-judul: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --font-isi: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-kode: Consolas, "Courier New", monospace;
+
+  --r: 20px;
+  --r-kecil: 12px;
+  --shadow: 0 6px 18px rgba(124, 107, 208, 0.12);
+}
