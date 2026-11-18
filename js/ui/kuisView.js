@@ -49,6 +49,9 @@ export function initKuis(root) {
   }
 
   function tampilSkor() {
+    // Beri tahu sidebar: Level 3 (Kuis) selesai
+    document.dispatchEvent(new CustomEvent('level-selesai', { detail: 'kuis' }));
+
     const persen = Math.round((benar / KUIS.length) * 100);
     const komentar = persen === 100 ? 'Sempurna! 🎉' : persen >= 60 ? 'Bagus, sedikit lagi! 👍' : 'Yuk baca teorinya lagi 📖';
     const skor = root.querySelector('#skor');
@@ -57,7 +60,10 @@ export function initKuis(root) {
       <b>${benar} / ${KUIS.length}</b>
       <p>${persen}%: ${komentar}</p>
       <button type="button" class="btn utama" id="btnUlangKuis">Ulangi kuis</button>`;
-    skor.querySelector('#btnUlangKuis').addEventListener('click', render);
+    skor.querySelector('#btnUlangKuis').addEventListener('click', () => {
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   render();

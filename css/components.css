@@ -1,16 +1,16 @@
 /* ---------- Kartu & grid ---------- */
 .card {
   background: var(--surface); border: 2px solid var(--garis);
-  border-radius: var(--r); padding: 20px 22px; box-shadow: var(--shadow);
-  margin-bottom: 18px;
+  border-radius: var(--r); padding: 22px 24px; box-shadow: var(--shadow);
+  margin-bottom: 20px;
 }
 .card > h3:first-child { margin-top: 0; }
-.card.ungu { border-top: 7px solid var(--purple); }
-.card.mint { border-top: 7px solid var(--mint); }
-.card.peach { border-top: 7px solid var(--peach); }
-.card.sky { border-top: 7px solid var(--sky); }
-.card.pink { border-top: 7px solid var(--pink); }
-.card.kuning { border-top: 7px solid var(--yellow); }
+.card.ungu { border-top: 6px solid var(--purple); }
+.card.mint { border-top: 6px solid var(--mint); }
+.card.peach { border-top: 6px solid var(--peach); }
+.card.sky { border-top: 6px solid var(--sky); }
+.card.pink { border-top: 6px solid var(--pink); }
+.card.kuning { border-top: 6px solid var(--yellow); }
 
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .grid-2 .card { margin-bottom: 0; }
@@ -49,31 +49,39 @@
 .istilah div { background: var(--pink-soft); border-radius: var(--r-kecil); padding: 10px 14px; }
 .istilah b { display: block; color: var(--purple-dark); }
 
-/* ---------- Tombol ---------- */
+/* ---------- Tombol ----------
+   .utama = aksi penting (satu warna tegas)
+   .btn polos, .mint, .peach = aksi sekunder (warna lembut) */
 .btn {
-  font: inherit; font-weight: 700; border: 0; cursor: pointer;
-  border-radius: 999px; padding: 9px 18px;
-  background: var(--purple-soft); color: var(--ink);
-  transition: transform .15s, box-shadow .15s;
+  font: inherit; font-weight: 700; border: 2px solid transparent; cursor: pointer;
+  border-radius: 999px; padding: 8px 18px;
+  background: var(--purple-soft); color: var(--purple-hover);
+  transition: transform .15s, box-shadow .15s, background .15s;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn:hover { background: #ddd8f6; transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
 .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+
 .btn.utama { background: var(--purple-dark); color: #fff; }
-.btn.mint { background: var(--mint); }
-.btn.peach { background: var(--peach); }
+.btn.utama:hover { background: var(--purple-hover); }
+.btn.mint { background: var(--mint-soft); color: var(--mint-dark); border-color: var(--mint); }
+.btn.mint:hover { background: var(--mint); }
+.btn.peach { background: var(--peach-soft); color: var(--peach-dark); border-color: var(--peach); }
+.btn.peach:hover { background: var(--peach); }
 .btn.kecil { padding: 4px 12px; }
 
 /* ---------- Form ---------- */
 input[type=text], input[type=number], select {
   font: inherit; color: var(--ink); background: #fff;
-  border: 2px solid var(--garis); border-radius: 10px; padding: 7px 10px;
+  border: 2px solid var(--garis-tebal); border-radius: 10px; padding: 7px 10px;
 }
-input:focus, select:focus { outline: none; border-color: var(--purple); }
+input:focus, select:focus { outline: none; border-color: var(--purple-dark); box-shadow: 0 0 0 3px var(--purple-soft); }
 input[type=number] { width: 90px; }
 input[type=file] { font: inherit; max-width: 100%; }
 
 .sumber-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
-.sumber-item { background: var(--bg); border: 2px dashed var(--garis); border-radius: var(--r-kecil); padding: 14px; }
+.sumber-item { background: var(--surface-2); border: 2px dashed var(--garis-tebal); border-radius: var(--r-kecil); padding: 14px; }
 .sumber-item b { display: block; margin-bottom: 6px; }
 .sumber-item p, .sumber-item small { color: var(--muted); margin: 6px 0; display: block; }
 .sumber-item select { width: 100%; margin-bottom: 4px; }
@@ -81,14 +89,14 @@ input[type=file] { font: inherit; max-width: 100%; }
 .baris-kontrol { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
 
 .pesan { min-height: 1.4em; font-weight: 700; margin: 8px 0; }
-.pesan.error { color: #c0475a; }
-.pesan.sukses { color: #3a9a73; }
+.pesan.error { color: #b83a50; }
+.pesan.sukses { color: #2f8a64; }
 
 /* ---------- Tabel ---------- */
 .tabel-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: separate; border-spacing: 0 5px; text-align: center; }
 th { font-family: var(--font-judul); font-weight: 500; color: var(--muted); padding: 4px 8px; }
-td { background: var(--bg); padding: 7px 8px; }
+td { background: var(--surface-2); padding: 7px 8px; }
 td:first-child { border-radius: 10px 0 0 10px; }
 td:last-child { border-radius: 0 10px 10px 0; }
 
@@ -119,10 +127,10 @@ td:last-child { border-radius: 0 10px 10px 0; }
 .opsi {
   display: block; width: 100%; text-align: left; margin: 6px 0;
   font: inherit; padding: 10px 14px; cursor: pointer;
-  background: var(--bg); border: 2px solid var(--garis); border-radius: var(--r-kecil);
+  background: var(--surface-2); border: 2px solid var(--garis); border-radius: var(--r-kecil);
   color: var(--ink); transition: all .15s;
 }
-.opsi:hover:not(:disabled) { border-color: var(--purple); transform: translateX(4px); }
+.opsi:hover:not(:disabled) { border-color: var(--purple-dark); transform: translateX(4px); }
 .opsi.benar { background: var(--benar); border-color: var(--benar-garis); }
 .opsi.salah { background: var(--salah); border-color: var(--salah-garis); }
 .penjelasan { margin-top: 6px; padding: 10px 14px; border-radius: var(--r-kecil); background: var(--yellow-soft); font-size: .95rem; }

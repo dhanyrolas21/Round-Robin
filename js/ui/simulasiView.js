@@ -15,7 +15,7 @@ const TEMPLATE = `
       <div class="sumber-item">
         <b>📦 Contoh bawaan</b>
         <select id="pilihContoh">
-          ${CONTOH.map((c, i) => `<option value="${i}">${c.nama}</option>`).join('')}
+          ${CONTOH.map((c, i) => `<option value="${i}">${escapeHtml(c.nama)}</option>`).join('')}
         </select>
         <small id="deskContoh"></small>
         <button type="button" class="btn mint" id="btnMuat">Muat contoh</button>
@@ -129,6 +129,7 @@ export function initSimulasi(root) {
     };
   }
 
+  // Pesan ditulis lewat textContent, jadi otomatis aman dari HTML.
   function tampilPesan(teks, jenis = '') {
     const el = $('#pesan');
     el.textContent = teks;
@@ -180,7 +181,7 @@ export function initSimulasi(root) {
   $('#btnJalan').addEventListener('click', jalankan);
 
   function jalankan() {
-    jeda();
+    jeda(); // hentikan pemutaran lama dan kembalikan teks tombol Putar
     const { quantum, proses } = ambilData();
     const pesan = validasiInput(quantum, proses);
     if (pesan) {
@@ -202,6 +203,9 @@ export function initSimulasi(root) {
     renderHasil(metrik);
     $('#hasil').hidden = false;
     setK(state.gantt.length);
+
+    // Beri tahu sidebar: Level 2 (Simulasi) selesai
+    document.dispatchEvent(new CustomEvent('level-selesai', { detail: 'simulasi' }));
   }
 
   // ---------- Render hasil ----------
