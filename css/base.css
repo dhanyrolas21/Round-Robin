@@ -6,25 +6,26 @@ body {
   font-family: var(--font-isi);
   color: var(--ink);
   line-height: 1.65;
-  background-color: var(--bg);
-  /* Titik halus seperti kertas peta. Hapus 2 baris ini kalau ingin latar polos. */
-  background-image: radial-gradient(circle, var(--titik-peta) 1.2px, transparent 1.2px);
-  background-size: 24px 24px;
+  background: var(--bg);
 }
 
-h1, h2, h3 { font-family: var(--font-judul); font-weight: 600; line-height: 1.25; }
+h1, h2, h3 { font-family: var(--font-judul); font-weight: 800; line-height: 1.2; color: var(--hijau-gelap); }
 h2 { font-size: 1.7rem; margin: 0 0 14px; }
 h3 { font-size: 1.2rem; margin: 22px 0 10px; }
 
-main { width: 100%; max-width: 960px; margin: 0 auto; padding: 32px 28px 24px; flex: 1; }
+main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 36px 24px 44px; }
 
 /* ---------- Panel ---------- */
 .panel { display: none; }
 .panel.aktif { display: block; animation: muncul .35s ease; }
 @keyframes muncul { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 18px 12px 28px; }
+footer {
+  background: var(--hijau-muda-2); color: var(--muted);
+  border-top: 1px solid var(--garis-tebal);
+  text-align: center; font-size: .92rem; padding: 20px 16px;
+}
 
 @media (max-width: 860px) {
-  main { padding: 18px 14px 16px; }
+  main { padding: 24px 14px 32px; }
 }

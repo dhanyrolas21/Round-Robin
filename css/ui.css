@@ -1,0 +1,47 @@
+/* ====== Penyesuaian akhir: putih-hijau bersih (dimuat paling akhir) ====== */
+
+/* Kartu: tipis dan rapi */
+.card { border: 1px solid var(--garis); border-radius: var(--r); }
+.card.ungu, .card.mint, .card.peach, .card.sky, .card.pink, .card.kuning { border-top-width: 4px; }
+
+/* Tombol */
+.btn { border-radius: 10px; }
+.btn:hover { background: #d3eddd; }
+
+/* Kuis: pilihan yang sedang dipilih */
+.opsi.dipilih { background: var(--purple-soft); border-color: var(--hijau-tua); }
+
+/* Gantt */
+.gantt-wrap { background: var(--mint-soft); }
+
+/* ---------- Kotak sumber data (Contoh / Impor / Isi sendiri) ----------
+   Isi kotak disusun flex supaya tombol sejajar, berjarak, dan tidak bertabrakan */
+.sumber-item { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.sumber-item > b,
+.sumber-item > small,
+.sumber-item > select,
+.sumber-item > input[type=file] { flex: 1 1 100%; margin: 0; }
+.sumber-item > small { line-height: 1.5; }
+.sumber-item .btn { margin: 0; }
+
+/* ---------- Halaman Teori ---------- */
+#teori {
+  --t-gelap: #1b8f55;      /* hijau sedang, lebih ringan dari sebelumnya */
+  --t-kapur: #e6f5ec;
+  --t-kuning: #ffe08a;
+  --t-mint: #d3f7e1;
+  --t-oranye: #e08a00;
+}
+.t-hero p { color: #f0fff6; }
+.t-hero .t-label { color: #ffe08a; }
+.t-pg-baris small { color: #e3f8ea; }
+.t-pg-antrean .kosong { color: #e3f8ea; }
+.t-pg-bar { color: #effcf3; }
+.t-pg-info { color: #fff; }
+#teori .t-pg-cpu { color: #12402a; }
+.t-papan { background: #123d27; border-color: #c98a1a; }
+.t-papan small { color: #a9d6bb; }
+.t-note::before { background: rgba(31, 168, 85, .45); }
+.t-alur .kotak.cpu { stroke: #d99a00; }
+.t-alur .belah { stroke: #2f8aa8; }
+.t-card, .t-lab, .t-alur { border-width: 1px; }

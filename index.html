@@ -7,64 +7,79 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/gantt.css">
+  <link rel="stylesheet" href="css/teori.css">
+  <link rel="stylesheet" href="css/unimed.css">
 </head>
 <body>
-  <div class="app">
 
-    <!-- Sidebar: peta level -->
-    <aside class="sidebar">
+  <!-- Strip hijau paling atas -->
+  <div class="topbar">
+    <div class="isi">
+      <span>Mata Kuliah Sistem Operasi</span>
+      <span>Penjadwalan CPU · Round Robin</span>
+      <span>Kelompok 6</span>
+    </div>
+  </div>
+
+  <!-- Navbar (menempel saat scroll) -->
+  <header class="navbar">
+    <div class="isi">
       <div class="brand">
-        <span class="roda" aria-hidden="true">🎡</span>
+        <span class="logo" aria-hidden="true">RR</span>
         <div>
           <b>Round Robin Land</b>
-          <small>Sistem Operasi</small>
+          <small>Media Pembelajaran</small>
         </div>
       </div>
 
-      <div class="xp">
-        <div class="xp-baris"><span>Progres</span><span id="xpLabel">0 / 3 level</span></div>
-        <div class="xp-bar"><div class="xp-isi" id="xpBar"></div></div>
-      </div>
-
-      <div class="peta-judul">Peta belajar</div>
-      <nav class="peta" role="tablist" aria-label="Peta level">
+      <nav class="peta" role="tablist" aria-label="Menu utama">
         <button class="tab aktif" role="tab" aria-selected="true" data-target="teori">
-          <span class="node">1</span>
-          <span class="teks"><b>📖 Teori</b><small>Level 1</small></span>
+          <span class="node">1</span><span class="teks">Teori</span>
         </button>
         <button class="tab" role="tab" aria-selected="false" data-target="simulasi">
-          <span class="node">2</span>
-          <span class="teks"><b>🎮 Simulasi</b><small>Level 2</small></span>
+          <span class="node">2</span><span class="teks">Simulasi</span>
         </button>
         <button class="tab" role="tab" aria-selected="false" data-target="kuis">
-          <span class="node">3</span>
-          <span class="teks"><b>🧩 Kuis</b><small>Level 3</small></span>
+          <span class="node">3</span><span class="teks">Kuis</span>
         </button>
       </nav>
 
-      <div class="sidebar-foot">Dibuat oleh Kelompok 6</div>
-    </aside>
-
-    <!-- Konten -->
-    <div class="konten">
-      <div class="judul-mobile">🎡 Round Robin Land</div>
-
-    <main>
-        <section id="teori" class="panel aktif"></section>
-        <section id="simulasi" class="panel"></section>
-        <section id="kuis" class="panel"></section>
-      </main>
-
-      <footer>Mata kuliah Sistem Operasi · Penjadwalan CPU Round Robin</footer>
+      <div class="xp" title="Level yang sudah diselesaikan">
+        <div class="xp-baris"><span>Progres</span><span id="xpLabel">0 / 3 level</span></div>
+        <div class="xp-bar"><div class="xp-isi" id="xpBar"></div></div>
+      </div>
     </div>
+  </header>
 
-  </div>
+  <!-- Banner -->
+  <section class="hero">
+    <div class="isi">
+      <div>
+        <span class="eyebrow">Selamat datang di media pembelajaran</span>
+        <h1>Penjadwalan CPU <em>Round Robin</em></h1>
+        <p>Pelajari teorinya, jalankan simulasinya, lalu uji pemahamanmu.</p>
+      </div>
+      <div class="hero-deko" aria-hidden="true">
+        <span class="c1">P1</span><span class="c2">P2</span><span class="c3">P3</span><span class="c4">P4</span>
+        <span class="panah">→</span>
+        <span class="cpu">CPU</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="teori" class="panel aktif"></section>
+    <section id="simulasi" class="panel"></section>
+    <section id="kuis" class="panel"></section>
+  </main>
+
+  <footer>Mata kuliah Sistem Operasi · Penjadwalan CPU Round Robin · Kelompok 6</footer>
 
   <script type="module" src="js/main.js"></script>
 </body>

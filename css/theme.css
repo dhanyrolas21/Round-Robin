@@ -1,35 +1,42 @@
 /* Semua warna, font, dan ukuran ada di sini.
-   Ganti nilai di sini untuk mengubah tema seluruh web. */
+   Nama variabel lama (--purple, --mint, dst.) dipertahankan supaya file CSS lain
+   tetap jalan, tetapi isinya sekarang hijau dan oranye. */
 :root {
+  /* Warna inti */
+  --hijau: #1fa855;          /* strip atas */
+  --hijau-tua: #168a48;      /* tombol utama, menu aktif */
+  --hijau-gelap: #0f4d2e;    /* judul */
+  --hijau-muda: #c4eed4;     /* gradasi navbar, banner */
+  --hijau-muda-2: #e8f8ee;   /* footer, latar lembut */
+  --oranye: #f59e0b;
+
   /* Latar & teks */
-  --bg: #f4f3fa;
+  --bg: #f5f8f6;
   --surface: #ffffff;
-  --surface-2: #faf9ff;
-  --ink: #34325a;
-  --muted: #6f6d94;
-  --garis: #e6e3f3;
-  --garis-tebal: #cfcbe8;
-  --titik-peta: #dcd8ef;
+  --surface-2: #f8fbf9;
+  --ink: #1b2430;
+  --muted: #5d6b78;
+  --garis: #e1e8e3;
+  --garis-tebal: #c9d5cd;
+  --titik-peta: transparent;
 
-  /* Warna utama tombol */
-  --purple: #a99ce6;
-  --purple-dark: #6c5cd0;
-  --purple-hover: #5a4bbd;
-  --purple-soft: #ebe8fa;
-
-  /* Aksen pastel */
-  --mint: #9fdcc6;
-  --mint-soft: #e3f6ef;
-  --mint-dark: #1f6b4f;
-  --peach: #f8c4a0;
-  --peach-soft: #fdeee2;
-  --peach-dark: #8a4a1d;
-  --sky: #9ccaf0;
-  --sky-soft: #e4f1fb;
-  --pink: #f4b2c8;
-  --pink-soft: #fce8ef;
-  --yellow: #f3dc8f;
-  --yellow-soft: #fbf3d6;
+  /* Nama lama -> palet hijau/oranye */
+  --purple: #4fc080;
+  --purple-dark: #168a48;
+  --purple-hover: #0f6e39;
+  --purple-soft: #e6f5ec;
+  --mint: #9bdcb8;
+  --mint-soft: #eaf7f0;
+  --mint-dark: #0f6e39;
+  --peach: #f7c46c;
+  --peach-soft: #fff4dc;
+  --peach-dark: #8a5a00;
+  --sky: #8ccbe0;
+  --sky-soft: #e8f4f8;
+  --pink: #f3b36b;
+  --pink-soft: #fff1de;
+  --yellow: #f5c14a;
+  --yellow-soft: #fff6dc;
 
   /* Kuis */
   --benar: #d6f3e4;
@@ -38,12 +45,12 @@
   --salah-garis: #e08585;
 
   /* Font */
-  --font-judul: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
-  --font-isi: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-judul: "Roboto", "Segoe UI", system-ui, sans-serif;
+  --font-isi: "Roboto", "Segoe UI", system-ui, sans-serif;
   --font-kode: Consolas, "Courier New", monospace;
 
   /* Bentuk */
-  --r: 18px;
-  --r-kecil: 12px;
-  --shadow: 0 4px 14px rgba(60, 58, 107, 0.08);
+  --r: 16px;
+  --r-kecil: 10px;
+  --shadow: 0 2px 10px rgba(15, 77, 46, 0.07);
 }

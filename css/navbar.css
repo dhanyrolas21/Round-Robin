@@ -1,0 +1,150 @@
+/* ---------- Warna lokal (tidak bergantung pada theme.css) ---------- */
+.topbar, .navbar, .hero, .toast {
+  --nv-hijau: #1fa855;
+  --nv-hijau-tua: #168a48;
+  --nv-hijau-gelap: #0f4d2e;
+  --nv-oranye: #f59e0b;
+  --nv-kuning: #ffd54a;
+  --nv-garis: #c9d5cd;
+  --nv-muted: #5d6b78;
+  --nv-ink: #1b2430;
+}
+
+/* Lebar isi: penuh ke samping, dengan jarak aman di kiri dan kanan */
+.topbar .isi, .navbar .isi, .hero .isi {
+  max-width: none; margin: 0;
+  padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px);
+}
+
+/* ---------- Strip hijau atas ---------- */
+.topbar { background: var(--nv-hijau); color: #fff; font-size: .95rem; font-weight: 500; }
+.topbar .isi {
+  padding-top: 9px; padding-bottom: 9px;
+  display: flex; justify-content: space-between; gap: 6px 20px; flex-wrap: wrap;
+}
+
+/* ---------- Navbar (menempel saat scroll) ---------- */
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: linear-gradient(90deg, #bdebcf 0%, #e4f6ea 45%, #ffffff 100%);
+  border-bottom: 1px solid var(--nv-garis);
+  box-shadow: 0 4px 14px rgba(15, 77, 46, .1);
+}
+.navbar .isi {
+  padding-top: 12px; padding-bottom: 12px;
+  display: flex; align-items: center; justify-content: space-between; gap: 22px;
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand .logo {
+  width: 50px; height: 50px; border-radius: 14px;
+  display: grid; place-items: center; font-size: 1.15rem;
+  background: var(--nv-hijau); color: #fff; font-weight: 900; letter-spacing: .02em;
+  box-shadow: 0 3px 0 var(--nv-oranye);
+}
+.brand b { display: block; font-size: 1.35rem; font-weight: 800; color: var(--nv-hijau-gelap); line-height: 1.15; }
+.brand small { color: var(--nv-muted); font-size: .92rem; }
+
+/* ---------- Menu ---------- */
+.peta { display: flex; gap: 8px; }
+.tab {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: inherit; font-size: 1.15rem; font-weight: 700; color: var(--nv-ink); cursor: pointer;
+  background: transparent; border: 0; border-radius: 12px; padding: 11px 22px;
+  transition: background .15s, color .15s;
+}
+.tab:hover { background: rgba(255, 255, 255, .8); color: var(--nv-hijau-tua); }
+.tab:focus-visible { outline: 3px solid var(--nv-oranye); outline-offset: 2px; }
+
+/* Lingkaran angka: hijau muda, angka hijau tua */
+.node {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: .95rem; font-weight: 800; line-height: 1;
+  background: #d3f2df; color: var(--nv-hijau-gelap); border: 2px solid var(--nv-hijau);
+}
+
+/* Menu yang sedang dibuka: hijau tua, lingkaran kuning */
+.tab.aktif {
+  background: var(--nv-hijau-tua); color: #fff;
+  box-shadow: 0 4px 10px rgba(22, 138, 72, .3);
+}
+.tab.aktif .node { background: var(--nv-kuning); color: var(--nv-hijau-gelap); border-color: var(--nv-kuning); }
+
+/* Level yang sudah selesai: lingkaran hijau penuh + centang putih */
+.tab.sudah .node { background: var(--nv-hijau); border-color: var(--nv-hijau); color: #fff; font-size: 0; }
+.tab.sudah .node::after { content: "✓"; font-size: 1rem; font-weight: 900; }
+
+/* Selesai tetapi sedang dibuka: lingkaran kuning dengan centang hijau tua */
+.tab.aktif.sudah .node { background: var(--nv-kuning); border-color: var(--nv-kuning); color: var(--nv-hijau-gelap); }
+
+/* ---------- Progres ---------- */
+.xp { min-width: 200px; }
+.xp-baris { display: flex; justify-content: space-between; gap: 10px; font-size: .95rem; font-weight: 700; color: var(--nv-hijau-gelap); margin-bottom: 5px; }
+.xp-bar { height: 10px; background: #d9e6de; border-radius: 99px; overflow: hidden; }
+.xp-isi { height: 100%; width: 0; background: linear-gradient(90deg, var(--nv-hijau), #7ddba0); border-radius: 99px; transition: width .5s ease; }
+
+/* ---------- Banner (hijau muda) ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #cdf1db 0%, #eefaf2 70%, #f7fcf9 100%);
+  border-bottom: 1px solid #e1e8e3;
+}
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%;
+  border: 40px solid rgba(31, 168, 85, .08);
+}
+.hero::before { width: 320px; height: 320px; right: -80px; top: -150px; }
+.hero::after { width: 200px; height: 200px; right: 22%; bottom: -130px; border-width: 28px; }
+.hero .isi {
+  position: relative; padding-top: 36px; padding-bottom: 38px;
+  display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
+}
+.hero .eyebrow {
+  display: inline-block; padding-bottom: 3px; margin-bottom: 12px;
+  font-size: .85rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+  color: #d97706; border-bottom: 2px solid #f59e0b;
+}
+.hero h1 { margin: 0 0 6px; font-size: 2.5rem; font-weight: 900; color: var(--nv-hijau-gelap); }
+.hero h1 em { font-style: normal; color: #e08a00; }
+.hero p { margin: 0; font-size: 1.05rem; color: #3d5a4a; }
+
+/* Hiasan kanan banner: antrean proses -> CPU */
+.hero-deko { position: relative; display: flex; align-items: center; gap: 10px; }
+.hero-deko span {
+  padding: 10px 18px; border-radius: 999px; font-weight: 800; color: #12402a;
+  box-shadow: 0 3px 0 rgba(15, 77, 46, .12);
+}
+.hero-deko .c1 { background: #9bdcb8; }
+.hero-deko .c2 { background: #f7c46c; }
+.hero-deko .c3 { background: #8ccbe0; }
+.hero-deko .c4 { background: #f3a6a0; }
+.hero-deko .panah { padding: 0; box-shadow: none; font-size: 1.5rem; color: var(--nv-hijau-tua); background: none; }
+.hero-deko .cpu { background: var(--nv-hijau-tua); color: #fff; border-radius: 14px; padding: 12px 20px; }
+
+/* ---------- Notifikasi level selesai ---------- */
+.toast {
+  position: fixed; top: 90px; right: 18px; z-index: 100;
+  background: var(--nv-hijau-gelap); color: #fff; font-weight: 700;
+  padding: 12px 18px; border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(15, 77, 46, .3);
+  border-left: 6px solid var(--nv-oranye);
+  animation: toast-masuk .35s ease, toast-keluar .4s ease 2.4s forwards;
+}
+@keyframes toast-masuk { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@keyframes toast-keluar { to { opacity: 0; transform: translateY(-12px); } }
+
+/* ---------- Layar sempit ---------- */
+@media (max-width: 980px) {
+  .hero-deko { display: none; }
+}
+@media (max-width: 860px) {
+  .topbar .isi span:nth-child(2) { display: none; }
+  .navbar .isi { flex-wrap: wrap; gap: 10px; }
+  .brand small { display: none; }
+  .peta { order: 3; width: 100%; }
+  .tab { flex: 1; justify-content: center; padding: 9px 6px; font-size: 1.02rem; }
+  .xp { min-width: 150px; }
+  .hero .isi { padding-top: 26px; padding-bottom: 28px; }
+  .hero h1 { font-size: 1.8rem; }
+}
